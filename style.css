@@ -1,0 +1,37 @@
+/*kanoume import to google font (lora) etsi wste na to xrhsimopoihsw sthn class form-div */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+.form-div {
+  margin:50px auto 50px;
+  padding:25px 15px 10px 15px;
+  border: 1px solid #80ced7;
+  border-radius:5px;
+  font-size: 1.1em;
+  font-family: 'Lora', serif;
+}
+
+.form-control:focus{
+  box-shadow:none;
+}
+
+/* styling tou p pou vrisketai entos form (Already a member? Sign in)*/
+
+ form p {
+  font-size: .89em;
+}
+
+.form-div.login{
+  margin-top:100px;
+}
+
+#loginid{
+  margin-bottom: 40px;
+  font-weight:bold;
+  text-decoration: underline;
+}
+
+#registerid{
+  font-weight:bold;
+  text-decoration: underline;
+}
+
