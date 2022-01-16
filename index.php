@@ -39,7 +39,7 @@ if(!isset($_SESSION['id'])) { // an to id den einai set (dhladh an o user den ei
         <a class="nav-link" href="postpage.php"><h6>Home</h6><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="post.php"><span class="text-dark"><h6>Post</h6></span></a>
+        <a class="nav-link" href="upload.php"><span class="text-dark"><h6>Post</h6></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link logout" href="index.php?logout=1"><span class="text-dark"><h6>Log out</h6></span></a>
