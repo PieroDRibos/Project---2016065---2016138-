@@ -10,9 +10,7 @@
 if(!isset($_SESSION['id'])) { // an to id den einai set (dhladh an o user den einai logged in)
   header('location: login.php');  // anti gia to index.php phgene mas otan kanei refresh sto login page gia na kanei o user login.
   exit();
-
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +25,33 @@ if(!isset($_SESSION['id'])) { // an to id den einai set (dhladh an o user den ei
       <title>Login</title>
 </head>
 <body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><h2><span class="text-warning">TEI</span>-POSTS</h2></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="postpage.php"><h6>Home</h6><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="post.php"><span class="text-dark"><h6>Post</h6></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link logout" href="index.php?logout=1"><span class="text-dark"><h6>Log out</h6></span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</header>
 
   <div class="container">     <!-- gia dhmiourgia bootstrap grid-->
     <div class="row">     <!-- dhmiourgia 1 row me medium sized columns (4) . Max size = 12-->
@@ -44,7 +69,7 @@ if(!isset($_SESSION['id'])) { // an to id den einai set (dhladh an o user den ei
 
         <h3>Welcome, <?php echo $_SESSION['username']; ?></h3> <!-- pairnei apo to session to username to xrhsth pou ekane login-->
 
-        <a href="index.php?logout=1" class="logout">Logout</a>
+
 
         <?php if(!$_SESSION['verified']): ?> <!--an o user den einai verified  -->
         <div class="alert alert-warning">   <!-- gia tous users pou kanoun login xwris verification emfanise auto to mhnyma-->
@@ -56,12 +81,20 @@ if(!isset($_SESSION['id'])) { // an to id den einai set (dhladh an o user den ei
         <?php endif; ?> <!-- telos ths if statement -->
         
         <?php if($_SESSION['verified']):?> <!--an o user einai verified  -->
+        <form action="postpage.php" class="form-group">
         <button class="btn btn-block btn-lg btn-primary">I am verified </button>   <!-- mono gia tous verified users emfanise to blue "iam verified" button -->
+        </form>
         <?php endif; ?>
 
     </div>
   </div>
 
-
+  <div class="container container-fixed-bottom">
+	<footer class="row row-cols-5 py-5 my-5 border-top">
+    <div class="col">
+      <p class="text-center text-muted">TEI-POST PAGE, Copyright &copy 2022</p>
+    </div>
+	</footer>
+</div>
 </body>
 </html>
