@@ -207,5 +207,28 @@ function verifyUser($token) {
 }
   
 
+//last edit
+//logic.php
+$conn = mysqli_connect("localhost", "root", "", "user-verification");  //sundesh me thn db 
 
+if(!$conn){  // an to connection apotuxei emfanise analogo message 
+  echo "<h3 class='container bg-dark text-center p-3 text-warning rounded-lg mt-5'>Not able to establish connection with the database</h3>";
+}
+
+$sql="SELECT * FROM data";
+$query = mysqli_query($conn, $sql);
+
+if(isset($_REQUEST["new_post"])){  // an to new post egine set tote
+  $title=$_REQUEST["title"];         // apothikeuse sto title ton titlo pou evale o xrhsths
+  $content=$_REQUEST["content"];      // kai apothikeuse kai to content pou evale sto textarea
+
+  $sql= "INSERT INTO data(title, content) VALUES('$title', '$content')"; // eisagei me to query sta values title kai content ths db ta values $title kai $content
+  mysqli_query($conn, $sql);  // kanoume execute to sql query me to mysqli_query
+  header("Location: upload.php?info=added");  // to info = added tha xrhsimopoihthei ws metavlhth me isset gia if condition
+  exit();
+
+}  
+
+
+?>
 
